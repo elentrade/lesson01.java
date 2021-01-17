@@ -112,7 +112,7 @@ public class lesson2 {
         FindExtremumInArray();
         System.out.println("//chapter 6");
         System.out.println(FindBalance());
-        System.out.println("//chapter 7");
+        System.out.println("//chapter 7 не осилила");
 
     }
 }
