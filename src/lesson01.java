@@ -15,10 +15,8 @@ public class lesson01 {
     }
     //chapter 4
     static boolean check(int number1, int number2){
-        if ((number1+number2)>10 && (number1+number2)<20)
-            return true;
-        else
-            return false;
+     return ((number1+number2)>10 && (number1+number2)<20);
+
     }
     //chapter 5
     static void check0(int number){
@@ -29,10 +27,8 @@ public class lesson01 {
     }
     //chapter 6
     static boolean check00(int number3){
-        if (number3<0)
-            return true;
-        else
-            return false;
+        return (number3<0);
+
     }
     //chapter 7
     static void greeting (String AnyName){
