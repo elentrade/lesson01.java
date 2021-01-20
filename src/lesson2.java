@@ -14,6 +14,11 @@ public class lesson2 {
         }
     }
         System.out.println("Array after replacing: "+Arrays.toString(arr));
+    // замена с использованием тернарн оператора и в одну строку
+    //  arr[i]=(arr[i]==0)?1:0;
+    //  arr[i]=1-arr[i];
+
+
     }
     //chapter 2
     static void FillArray(){
