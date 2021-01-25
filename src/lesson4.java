@@ -3,8 +3,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class lesson4 {
-    static final int SizeMap = 3;
-    static final int WinItems = 3;
+    static final int SizeMap = 5;
+    static final int WinItems = 5;
     static final char DotX = 'X';
     static final char DotO = 'O';
     static final char DotEmpty = '*';
@@ -73,47 +73,64 @@ public class lesson4 {
             return false;
         }
     }
-
-    ////Check win. If Dot has found 3 times - win
-    static boolean CheckWin(char Symbol) {
-        int Dots;
-        //checking rows
+    ////Check win. If Dot has found 5 times - win
+    //checking rows
+    static boolean CheckingRows(char Symbol) {
         for (int i = 0; i < SizeMap; i++) {
-            Dots = 0;
+            int Dots = 0;
             for (int j = 0; j < GameMap[i].length; j++) {
                 if (GameMap[i][j] == Symbol) {
                     Dots = Dots + 1;
                 }
-                if (Dots == 3) {
+                if (Dots == 5) {
                     return true;
                     //break;
                 }
             }
 
-            return false;
-        }
 
-        //checking columns
-for (int j=0;j<SizeMap;j++) {
-    Dots = 0;
-    for (int i = 0; i < SizeMap; i++) {
-        if (GameMap[i][j] == Symbol) {
-            Dots = Dots + 1;
         }
-        if (Dots == 3) {
-            return true;
-            //  break;
-        }
+        return false;
     }
-    return false;
-}
+    //checking rows
+    static boolean CheckingColumns(char Symbol) {
+        for (int i = 0; i < SizeMap; i++) {
+            int Dots = 0;
+            for (int j = 0; j < GameMap[i].length; j++) {
+                if (GameMap[j][i] == Symbol) {
+                    Dots = Dots + 1;
+                }
+                if (Dots == 5) {
+                    return true;
+                    //break;
+                }
+            }
 
-        if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol) || (GameMap[2][0] == Symbol && GameMap[1][1] == Symbol && GameMap[0][2] == Symbol)) {
+
+        }
+        return false;
+    }
+
+    static boolean CheckingDiagonal(char Symbol){
+        if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol && GameMap[3][3] == Symbol && GameMap[4][4] == Symbol) || (GameMap[2][0] == Symbol && GameMap[1][1] == Symbol && GameMap[0][2] == Symbol && GameMap[0][3] == Symbol && GameMap[0][4] == Symbol)) {
             return true;
         }
 
         return false;
     }
+
+    static boolean CheckWin(char Symbol) {
+        if (CheckingRows(Symbol)){
+            return true;
+        } else if (CheckingColumns(Symbol)){
+            return true;
+        }
+        else if (CheckingDiagonal(Symbol)){
+            return true;
+        }
+        return false;
+    }
+
 
     // Check empty
     static boolean CheckEmpty() {
