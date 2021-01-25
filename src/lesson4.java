@@ -112,7 +112,7 @@ public class lesson4 {
     }
 
     static boolean CheckingDiagonal(char Symbol){
-        if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol && GameMap[3][3] == Symbol && GameMap[4][4] == Symbol) || (GameMap[2][0] == Symbol && GameMap[1][1] == Symbol && GameMap[0][2] == Symbol && GameMap[0][3] == Symbol && GameMap[0][4] == Symbol)) {
+        if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol && GameMap[3][3] == Symbol && GameMap[4][4] == Symbol) || (GameMap[0][4] == Symbol && GameMap[1][3] == Symbol && GameMap[2][2] == Symbol && GameMap[1][3] == Symbol && GameMap[4][0] == Symbol)) {
             return true;
         }
 
