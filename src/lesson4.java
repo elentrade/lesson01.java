@@ -82,7 +82,7 @@ public class lesson4 {
                 if (GameMap[i][j] == Symbol) {
                     Dots = Dots + 1;
                 }
-                if (Dots == 5) {
+                if (Dots == 4) {
                     return true;
                     //break;
                 }
@@ -100,32 +100,59 @@ public class lesson4 {
                 if (GameMap[j][i] == Symbol) {
                     Dots = Dots + 1;
                 }
-                if (Dots == 5) {
+                if (Dots == 4) {
                     return true;
                     //break;
                 }
             }
-
-
         }
         return false;
     }
 
-    static boolean CheckingDiagonal(char Symbol){
-        if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol && GameMap[3][3] == Symbol && GameMap[4][4] == Symbol) || (GameMap[2][0] == Symbol && GameMap[1][1] == Symbol && GameMap[0][2] == Symbol && GameMap[0][3] == Symbol && GameMap[0][4] == Symbol)) {
-            return true;
+    static boolean CheckingDownDiagonal(char Symbol){
+       // if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol && GameMap[3][3] == Symbol && GameMap[4][4] == Symbol) || (GameMap[0][4] == Symbol && GameMap[1][3] == Symbol && GameMap[2][2] == Symbol && GameMap[1][3] == Symbol && GameMap[0][4] == Symbol)) {
+        //    return true;
+    //}
+        int Dots = 0;
+        for (int i = 0; i < SizeMap; i++) {
+            if (GameMap[i][i] == Symbol) {
+                Dots = Dots + 1;
+            }
+            if (Dots == 4) {
+                return true;
+                //break;
+            }
         }
-
+        return false;
+    }
+    static boolean CheckingUpDiagonal(char Symbol){
+        // if ((GameMap[0][0] == Symbol && GameMap[1][1] == Symbol && GameMap[2][2] == Symbol && GameMap[3][3] == Symbol && GameMap[4][4] == Symbol) || (GameMap[0][4] == Symbol && GameMap[1][3] == Symbol && GameMap[2][2] == Symbol && GameMap[1][3] == Symbol && GameMap[0][4] == Symbol)) {
+        //    return true;
+        //}
+        int Dots = 0;
+        for (int i = 0; i < SizeMap; i++) {
+            if (GameMap[i][SizeMap-i-1] == Symbol) {
+                Dots = Dots + 1;
+            }
+            if (Dots == 4) {
+                return true;
+                //break;
+            }
+        }
         return false;
     }
 
     static boolean CheckWin(char Symbol) {
         if (CheckingRows(Symbol)){
             return true;
-        } else if (CheckingColumns(Symbol)){
+        }
+        else if (CheckingColumns(Symbol)){
             return true;
         }
-        else if (CheckingDiagonal(Symbol)){
+        else if (CheckingDownDiagonal(Symbol)){
+            return true;
+        }
+        else if (CheckingUpDiagonal(Symbol)){
             return true;
         }
         return false;
