@@ -12,7 +12,7 @@ public class lesson5 {
 
 
         for (int i=0;i < arr1.length;i++) {
-          if(arr1[i].AgeFilter()) {
+          if(arr1[i].AgeFilter(40)){
             arr1[i].PrintPersonalData();
           }
         }

@@ -20,8 +20,8 @@ public void PrintPersonalData(){
         System.out.println("Salary:"+this.Salary);
         System.out.println("Age:"+this.Age);
 }
-    public boolean AgeFilter(){
-        if(this.Age>40){
+    public boolean AgeFilter(int i){
+        if(this.Age>i){
             return true;
         }
         else {
