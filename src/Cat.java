@@ -9,7 +9,7 @@ public class Cat {
     }
     public void GetEat(Plates plates){
         System.out.println(this.Name+ " have appetit " + this.Appetit);
-        if (this.Appetit<plates.Meal){
+        if (this.Appetit<plates.Meal || this.Appetit==plates.Meal){
             plates.Meal = plates.Meal - this.Appetit;
             this.IsHungry = false;
             System.out.println ("Cat "+ this.Name+" have eat and now is happy! Hungry== "+this.IsHungry);
